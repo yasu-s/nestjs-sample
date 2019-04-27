@@ -23,6 +23,7 @@
       "rxjs/Rx"
     ],
     "interface-over-type-literal": true,
+    "interface-name": [false],
     "label-position": true,
     "member-access": false,
     "member-ordering": [
@@ -61,6 +62,7 @@
     "no-namespace": false,
     "no-non-null-assertion": true,
     "no-redundant-jsdoc": true,
+    "no-object-literal-type-assertion": false,
     "no-shadowed-variable": true,
     "no-string-literal": false,
     "no-string-throw": true,

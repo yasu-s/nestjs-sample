@@ -1,5 +1,7 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get, Param } from '@nestjs/common';
+
 import { AppService } from './app.service';
+import { HogeDto } from './dto';
 
 @Controller()
 export class AppController {
@@ -8,5 +10,13 @@ export class AppController {
   @Get()
   getHello(): string {
     return this.appService.getHello();
+  }
+
+  @Get('hoge/:id')
+  findOne(@Param('id') id: string): HogeDto {
+    return {
+      id,
+      name: 'aaa',
+    } as HogeDto;
   }
 }
