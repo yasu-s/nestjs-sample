@@ -25,9 +25,7 @@
     "@nestjs/platform-express": "^6.0.0",
     "reflect-metadata": "^0.1.12",
     "rimraf": "^2.6.2",
-    "rxjs": "^6.3.3",
-    "tslint-config-prettier": "^1.18.0",
-    "tslint-plugin-prettier": "^2.0.1"
+    "rxjs": "^6.3.3"
   },
   "devDependencies": {
     "@nestjs/testing": "^6.0.0",
@@ -43,6 +41,8 @@
     "ts-node": "^7.0.1",
     "tsconfig-paths": "^3.7.0",
     "tslint": "5.12.1",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
     "typescript": "^3.2.4"
   },
   "jest": {

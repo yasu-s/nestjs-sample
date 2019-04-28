@@ -19,4 +19,16 @@ describe('AppController', () => {
       expect(appController.getHello()).toBe('Hello World!');
     });
   });
+
+  describe('findOne', () => {
+    it('get ok"', () => {
+      // exercise
+      const data = appController.findOne('1');
+
+      // verify
+      expect(data).toBeDefined();
+      expect(data.id).toBe('1');
+      expect(data.name).toBe('aaa');
+    });
+  });
 });
