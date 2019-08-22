@@ -9,6 +9,16 @@
       "request": "attach",
       "name": "Attach",
       "port": 9229
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch",
+      "port": 9229,
+      "runtimeExecutable": "yarn",
+      "cwd": "${workspaceFolder}",
+      "runtimeArgs": ["start:debug"],
+      "console": "integratedTerminal",
     }
   ]
 }
