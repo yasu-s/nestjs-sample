@@ -18,7 +18,8 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "docs": "redoc-cli bundle http://localhost:3000/api-json -o docs/api/index.html"
+    "docs": "redoc-cli bundle http://localhost:3000/api-json -o docs/api/index.html",
+    "compodoc": "npx compodoc -p tsconfig.json -s -d ./docs/compodoc"
   },
   "dependencies": {
     "@nestjs/common": "^6.5.0",
@@ -35,6 +36,7 @@
     "swagger-ui-express": "^4.0.2"
   },
   "devDependencies": {
+    "@compodoc/compodoc": "^1.1.10",
     "@nestjs/testing": "^6.5.0",
     "@types/express": "^4.17.0",
     "@types/jest": "^23.3.13",

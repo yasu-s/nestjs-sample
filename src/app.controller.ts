@@ -14,6 +14,10 @@ export class AppController {
     return this.appService.getHello();
   }
 
+  /**
+   * 1件データ取得
+   * @param id ID
+   */
   @Get('hoge/:id')
   @ApiResponse({ status: 200, type: HogeDto })
   findOne(@Param('id') id: string): HogeDto {
