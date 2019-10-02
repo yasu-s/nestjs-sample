@@ -1,8 +1,9 @@
-import { Controller, Get, HttpService, Param, Res } from '@nestjs/common';
+import { Controller, Get, Header, HttpService, Param, Res, UseInterceptors } from '@nestjs/common';
 import { ApiResponse, ApiUseTags } from '@nestjs/swagger';
 import { Response } from 'express';
 
 import { AppService } from './app.service';
+import { CustomInterceptor } from './custom.interceptor';
 import { HogeDto } from './dto';
 
 @ApiUseTags('sample')
@@ -33,5 +34,12 @@ export class AppController {
     const fileRes = await this.httpService.get('http://localhost:3000/sample.pdf', { responseType: 'arraybuffer' }).toPromise();
     res.attachment('hoge.pdf');
     res.send(fileRes.data);
+  }
+
+  @Get('hoge-file2')
+  @UseInterceptors(CustomInterceptor)
+  async file2() {
+    const fileRes = await this.httpService.get('http://localhost:3000/sample.pdf', { responseType: 'arraybuffer' }).toPromise();
+    return fileRes.data;
   }
 }
