@@ -1,5 +1,6 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, HttpService, Param, Res } from '@nestjs/common';
 import { ApiResponse, ApiUseTags } from '@nestjs/swagger';
+import { Response } from 'express';
 
 import { AppService } from './app.service';
 import { HogeDto } from './dto';
@@ -7,7 +8,7 @@ import { HogeDto } from './dto';
 @ApiUseTags('sample')
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: AppService, private readonly httpService: HttpService) {}
 
   @Get()
   getHello(): string {
@@ -25,5 +26,12 @@ export class AppController {
       id,
       name: 'aaa',
     } as HogeDto;
+  }
+
+  @Get('hoge-file')
+  async file(@Res() res: Response) {
+    const fileRes = await this.httpService.get('http://localhost:3000/sample.pdf', { responseType: 'arraybuffer' }).toPromise();
+    res.attachment('hoge.pdf');
+    res.send(fileRes.data);
   }
 }
