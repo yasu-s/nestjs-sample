@@ -7,10 +7,11 @@ import { map, mergeMap, switchMap } from 'rxjs/operators';
 export class CustomInterceptor implements NestInterceptor {
   intercept(context: ExecutionContext, next: CallHandler): Observable<any> {
     return next.handle().pipe(
-      map((data: ArrayBuffer) => {
+      mergeMap((data: ArrayBuffer) => {
         const res = context.switchToHttp().getResponse<Response>();
         res.attachment('sample.pdf');
         res.send(data);
+        return NEVER;
       }),
     );
   }
