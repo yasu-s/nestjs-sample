@@ -26,4 +26,9 @@ export class AppController {
       name: 'aaa',
     } as HogeDto;
   }
+
+  @Get('env')
+  getEnv(): string {
+    return process.env.HOGE;
+  }
 }
