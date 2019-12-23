@@ -8,6 +8,8 @@ import Axios from 'axios';
 export class AppService {
   private num = 0;
 
+  constructor(private readonly httpService: HttpService) {}
+
   /**
    * 'Hello World!' 文字列取得
    * @returns 'Hello World!'
@@ -25,6 +27,13 @@ export class AppService {
     console.log(`${httpService.axiosRef.defaults.timeout}`);
     const res = await httpService.get('http://localhost:3000/').toPromise();
     httpService.axiosRef.defaults.timeout = 100;
+    return res.data;
+  }
+
+  async getData2() {
+    console.log(`${this.httpService.axiosRef.defaults.timeout}`);
+    const res = await this.httpService.get('http://localhost:3000/').toPromise();
+    this.httpService.axiosRef.defaults.timeout = 100;
     return res.data;
   }
 }

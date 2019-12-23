@@ -65,4 +65,9 @@ export class AppController {
   async getData() {
     return this.appService.getData();
   }
+
+  @Get('data2')
+  async getData2() {
+    return this.appService.getData2();
+  }
 }
