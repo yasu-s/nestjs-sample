@@ -1,3 +1,6 @@
+
+![CI](https://github.com/yasu-s/nestjs-sample/workflows/CI/badge.svg?branch=master)
+
 ## Description
 
 
