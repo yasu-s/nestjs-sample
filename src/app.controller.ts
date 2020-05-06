@@ -1,10 +1,10 @@
 import { Controller, Get, Param } from '@nestjs/common';
-import { ApiResponse, ApiUseTags } from '@nestjs/swagger';
+import { ApiResponse, ApiTags } from '@nestjs/swagger';
 
 import { AppService } from './app.service';
 import { HogeDto } from './dto';
 
-@ApiUseTags('sample')
+@ApiTags('sample')
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}

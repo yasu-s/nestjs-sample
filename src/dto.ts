@@ -1,9 +1,9 @@
-import { ApiModelProperty } from '@nestjs/swagger';
+import { ApiProperty } from '@nestjs/swagger';
 
 export class HogeDto {
-  @ApiModelProperty({ description: 'id' })
+  @ApiProperty({ description: 'id' })
   id: string;
 
-  @ApiModelProperty()
+  @ApiProperty()
   name: string;
 }
