@@ -23,15 +23,23 @@ $ yarn start:dev
 $ yarn start:prod
 ```
 
+### Debug URL
+
+- Swagger - http://localhost:3000/api/
+- Graphql - http://localhost:3000/graphql
+
 ## Test
 
 ```bash
 # unit tests
 $ yarn test
 
-# e2e tests
-$ yarn test:e2e
-
 # test coverage
 $ yarn test:cov
+```
+
+## Documents
+
+```bash
+$ yarn compodoc
 ```
