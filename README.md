@@ -7,20 +7,20 @@
 ## Installation
 
 ```bash
-$ yarn
+yarn
 ```
 
 ## Running the app
 
 ```bash
 # development
-$ yarn start
+yarn start
 
 # watch mode
-$ yarn start:dev
+yarn start:dev
 
 # production mode
-$ yarn start:prod
+yarn start:prod
 ```
 
 ### Debug URL
@@ -32,14 +32,14 @@ $ yarn start:prod
 
 ```bash
 # unit tests
-$ yarn test
+yarn test
 
 # test coverage
-$ yarn test:cov
+yarn test:cov
 ```
 
 ## Documents
 
 ```bash
-$ yarn compodoc
+yarn compodoc
 ```
